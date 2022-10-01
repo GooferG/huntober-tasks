@@ -15,4 +15,4 @@
 // myArr = ['hi', 'hello', 'howdy', 'hola', 'hej', 'hallo', 'heyyy']
 // // move things around
 // => ['hola', 'hallo', 'hi', 'hej', 'hello', 'howdy', 'heyyy']
-// Have fun!!
+// Have fun!
