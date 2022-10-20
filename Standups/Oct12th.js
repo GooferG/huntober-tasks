@@ -14,6 +14,13 @@
 
 // Today's solution: https://replit.com/@leonanoel/fizzbuzz-huntober2022#index.js
 
+function domainName(url) {
+  url = url.replace('https://', '');
+  url = url.replace('http://', '');
+  url = url.replace('www.', '');
+  return url.split('.')[0];
+}
+
 console.log(domainName('http://github.com/carbonfive/raygun') == 'github');
 console.log(domainName('http://www.zombie-bites.com') == 'zombie-bites');
 console.log(domainName('https://www.cnet.com') == 'cnet');
