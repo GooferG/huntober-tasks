@@ -37,6 +37,14 @@
 
 const checkEquality = (firstArr, secondArr) => {
   // console.log(firstArr, secondArr);
+  let arrComp1 = [];
+  let arrComp2 = [];
+
+  firstArr.forEach((arr, i) => arrComp1.push(...arr));
+  secondArr.forEach((arr, i) => arrComp2.push(...arr));
+
+  console.log(arrComp1, arrComp2, arrComp1.toString() === arrComp2.toString());
+  return arrComp1.toString() === arrComp2.toString();
 };
 
 const arr1 = [
@@ -60,4 +68,7 @@ const arr4 = [
   ['d', 'e', 'f'],
 ];
 
-checkEquality(arr1, arr2);
+console.log(checkEquality(arr1, arr2));
+console.log(checkEquality(arr1, arr2)); // => true
+console.log(checkEquality(arr1, arr3)); // => false
+console.log(checkEquality(arr1, arr4)); // => false
