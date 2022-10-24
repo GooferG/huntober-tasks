@@ -28,3 +28,23 @@ console.log(myArray); // ['xyz', 'abc', 1, 'Hey!', 2]
 // Note that 2 is already as far right as it can go
 console.log(myArray); // ['xyz', 'abc', 1, 'Hey!', 2] no change
 // Got it? Great! I can't wait to get moving things around.
+
+// PREP
+// Parameters: array of values
+// Requiremes: Need to move it either index + 1 or index -1
+// Example: moveLeft(['abc', 'xyz', 1, 2, 'Hey!']) -> ['xyz', 'abc', 1, 2, 'Hey!']
+// PseudoCode: if moving right, indexOf + 1, if moving left, IndexOf - 1
+
+const moveLeft = (arr, item) => {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr.indexOf(item) < 0) {
+      return arr;
+    } else {
+      return arr.length;
+    }
+  }
+};
+
+console.log(moveLeft(myArray, 'xyz'));
+
+const moveRight = (arr, item, itemToMove) => {};

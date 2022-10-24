@@ -15,3 +15,13 @@
 // From: https://www.codewars.com/kata/5a431c0de1ce0ec33a00000c/solutions/javascript
 
 // Hint: Filter the even numbers and slice the end using the -n syntax
+
+function evenNumbers(array, number) {
+  let evens = [];
+  array.map((x) => {
+    if (x % 2 === 0) {
+      evens.push(x);
+    }
+  });
+  return evens.splice(-number);
+}
