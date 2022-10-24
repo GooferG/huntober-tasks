@@ -36,15 +36,29 @@ console.log(myArray); // ['xyz', 'abc', 1, 'Hey!', 2] no change
 // PseudoCode: if moving right, indexOf + 1, if moving left, IndexOf - 1
 
 const moveLeft = (arr, item) => {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr.indexOf(item) < 0) {
-      return arr;
-    } else {
-      return arr.length;
-    }
-  }
+  const idx = arr.indexOf(item);
+  console.log(idx);
+  if (idx === 0) return;
+
+  const temp = arr[idx - 1];
+  arr[idx - 1] = arr[idx];
+  arr[idx] = temp;
 };
 
-console.log(moveLeft(myArray, 'xyz'));
+moveLeft(myArray, 'xyz');
+console.log(myArray);
 
-const moveRight = (arr, item, itemToMove) => {};
+const moveRight = (arr, item, itemToMove) => {
+  const idx = arr.indexOf(item);
+  console.log(idx);
+  if (idx === arr.length - 1) return;
+
+  const temp = arr[idx + 1];
+  arr[idx + 1] = arr[idx];
+  arr[idx] = temp;
+};
+
+moveRight(myArray, 'xyz');
+console.log(myArray);
+moveRight(myArray, 2);
+console.log(myArray);

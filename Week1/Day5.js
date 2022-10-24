@@ -7,13 +7,13 @@
 //? Total length of pun cannot be a multiple of 5 (this includes spaces and punctuation) **DONE**
 //? Must not contain a capital 'S' (definitely too strict. What does S even have to do with cat puns?) **DONE**
 
-//?! The sum of the charCodes of the 1st and last characters must be odd (my friend's a bit of a character, but she's great once you get to know her)
+//? The sum of the charCodes of the 1st and last characters must be odd (my friend's a bit of a character, but she's great once you get to know her)
 
 //? Character directly after the middle of the string may not be 'e' (For example the character to check in even-length string center is t, for odd an example would be weird -> 'r') **DONE**
 
-//?! Must have an even number of lowercase letters (do not count punctuation or spaces as letters)
+//? Must have an even number of lowercase letters (do not count punctuation or spaces as letters)
 
-//?! Must have at least 2 capital letters (honestly, I'm a little worried these requirements are too strict)
+//? Must have at least 2 capital letters (honestly, I'm a little worried these requirements are too strict)
 
 let devString =
   'sfQmg4ly#viO 1h DjVV^P  WLuDM2.  #1t00 wVd HD dbv 8tll t)vg1   ';
@@ -27,22 +27,28 @@ const bannedWords = ['dog', 'bark', 'bone'];
 // const noWhiteSpaceArr = catPunsArr.map((pun) => pun.trimStart().trimEnd());
 // console.log(noWhiteSpaceArr)
 const filteredBanWordsArr = catPunsArr
-  .filter((pun) => pun.toLowerCase().includes('dog') === false)
-  .filter((pun) => pun.toLowerCase().includes('bark') === false)
-  .filter((pun) => pun.toLowerCase().includes('bone') === false)
+  .filter((pun) => !pun.toLowerCase().includes('dog'))
+  .filter((pun) => !pun.toLowerCase().includes('bark'))
+  .filter((pun) => !pun.toLowerCase().includes('bone'))
   .filter((pun) => pun.length % 5 === 0)
-  .filter((pun) => pun.toLowerCase()[0].includes(' ') === false)
-  .filter((pun) => pun.toLowerCase()[pun.length - 1].includes(' ') === false)
-  .filter((pun) => (pun.length % 2 === 0 ? pun[pun.length / 2] != 't' : 'e'));
+  .filter((pun) => !pun.toLowerCase()[0].startsWith(' '))
+  .filter((pun) => !pun.toLowerCase()[pun.length - 1].endsWith(' '))
+  .filter((pun) => (pun.length % 2 === 0 ? pun[pun.length / 2] != 't' : 'e'))
+  .filter((pun) => !pun.includes('S'))
+  .filter(
+    (pun) =>
+      (pun[0].charCodeAt(0) + pun[pun.length - 1].charCodeAt(0)) % 2 !== 0
+  )
+  .filter(
+    (pun) =>
+      pun
+        .replace(' ', '')
+        .split('')
+        .filter((c) => c.toLowerCase() === c).length %
+        2 ===
+      0
+  );
 
-catPunsArr = filteredBanWordsArr.filter((pun) => pun.includes('S') === false);
-catPunsArr.filter((pun) => {
-  let firstChar = pun[0].charCodeAt(pun[0].length - 1);
-  let lastChar = pun[pun.length - 1].charCodeAt(pun[pun.length - 1].length - 1);
-  console.log(pun[0].charCodeAt(pun[0].length - 1));
-  console.log(pun[pun.length - 1].charCodeAt(pun[pun.length - 1].length - 1));
-  console.log((firstChar + lastChar) % 2 === 0);
-  (firstChar + lastChar) % 2 == 0;
-});
+catPunsArr = filteredBanWordsArr;
 
 console.log(catPunsArr);
