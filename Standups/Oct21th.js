@@ -16,12 +16,19 @@
 
 // Hint: Filter the even numbers and slice the end using the -n syntax
 
-function evenNumbers(array, number) {
-  let evens = [];
-  array.map((x) => {
-    if (x % 2 === 0) {
-      evens.push(x);
-    }
-  });
-  return evens.splice(-number);
-}
+// function evenNumbers(array, number) {
+//   let evens = [];
+//   array.map((x) => {
+//     if (x % 2 === 0) {
+//       evens.push(x);
+//     }
+//   });
+//   return evens.splice(-number);
+// }
+
+// One liner:
+
+const evenNumbers = (array, number) =>
+  array.filter((item) => item % 2 === 0).slice(-number);
+
+console.log(evenNumbers([1, 2, 3, 4, 5, 6, 7, 8, 9], 3), '[4,6,8]');

@@ -30,10 +30,10 @@ const filteredBanWordsArr = catPunsArr
   .filter((pun) => !pun.toLowerCase().includes('dog'))
   .filter((pun) => !pun.toLowerCase().includes('bark'))
   .filter((pun) => !pun.toLowerCase().includes('bone'))
-  .filter((pun) => pun.length % 5 === 0)
+  .filter((pun) => pun.length % 5 !== 0)
   .filter((pun) => !pun.toLowerCase()[0].startsWith(' '))
   .filter((pun) => !pun.toLowerCase()[pun.length - 1].endsWith(' '))
-  .filter((pun) => (pun.length % 2 === 0 ? pun[pun.length / 2] != 't' : 'e'))
+  .filter((pun) => pun[Math.ceil(pun.length / 2) + 1] !== 'e')
   .filter((pun) => !pun.includes('S'))
   .filter(
     (pun) =>
