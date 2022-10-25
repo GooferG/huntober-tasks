@@ -28,6 +28,11 @@
 
 // One liner:
 
+/**
+ * It filters the array for even numbers, then returns the last n numbers of the filtered array
+ * @param array - an array of integers
+ * @param number - The number of items to return.
+ */
 const evenNumbers = (array, number) =>
   array.filter((item) => item % 2 === 0).slice(-number);
 
