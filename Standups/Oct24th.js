@@ -19,3 +19,22 @@
 // From: https://www.codewars.com/kata/59e66e48fc3c499ec5000103
 
 // 🙏🏾  Please spend time really digesting the problem and working through the test cases! Make sure you can solve each test case with just your brain first.
+
+// Going over the solution to the coding challenge:
+function solve(arr) {
+  // map over each member of the array
+  // create a new set for each array, this removes any duplicates
+  // use the size property of Set to show the number of items in the sub array (similar to array.length)
+  // use reduce to multiply each sub array to give the result.
+  return arr.map((sA) => new Set(sA).size).reduce((a, c) => a * c, 1);
+}
+
+// A fancy one-liner:
+// pass in the array
+// reduce, take the accumulator, multiply this by the size of the Set subarray
+const solve = (arr) => arr.reduce((a, c) => a * new Set(c).size, 1);
+
+// Short Q&A today, a few pointers:
+// if asked for salary expectations, respond with "fair market rate for a developer of my experience". If they persist, ask "what have you budgeted for the role"
+// put university/college experience on the bottom of your resume (use the template)
+// Generally, try to end an interview expressing your excitement about the role (this was in relation to someone wondering if they ended their interview awkwardly with what they said)

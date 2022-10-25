@@ -55,7 +55,7 @@ function removeXChar(str, n) {
   return arr.join('');
 }
 
-const test1 = removeXChar('Thies its H alltowe!en!?', 4);
+const test1 = removeXChar('Thies its H alltowe!en!?', 3);
 console.log(test1);
 
 // ------------------------------- //
