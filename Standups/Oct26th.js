@@ -17,3 +17,11 @@
 // From: https://www.codewars.com/kata/5a512f6a80eba857280000fc/javascript
 
 // Hint: sort the array and then grab the nth value. !remember how arrays are indexed :)
+
+function nthSmallest(arr, pos) {
+  return arr.sort((a, b) => a - b)[pos - 1];
+}
+
+console.log(nthSmallest([3, 1, 2], 2));
+console.log(nthSmallest([177, 225, 243, -169, -12, -5, 2, 92], 5));
+console.log(nthSmallest([15, 20, 7, 10, 4, 3], 3));
