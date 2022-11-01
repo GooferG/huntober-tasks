@@ -11,16 +11,28 @@
 
 // From: https://www.codewars.com/kata/5878520d52628a092f0002d0/
 
+// const transformStr = (str) => {
+//   const result = str.split('').map((l) => {
+//     if (l === l.toUpperCase()) {
+//       return l.toLowerCase();
+//     } else if (l === l.toLowerCase()) {
+//       return l.toUpperCase();
+//     }
+//   });
+//   return result.join('').split(' ').reverse().join(' ').trim();
+// };
+
 const transformStr = (str) => {
-  const result = str.split('').map((l) => {
-    if (l === l.toUpperCase()) {
-      return l.toLowerCase();
-    } else if (l === l.toLowerCase()) {
-      return l.toUpperCase();
-    }
-  });
-  return result.join('').split(' ').reverse().join(' ');
+  const reversedStr = str.split(' ').reverse().join(' ');
+  const transformedStr = reversedStr
+    .split('')
+    .map((l) => (l === l.toUpperCase() ? l.toLowerCase() : l.toUpperCase()))
+    .join('');
+
+  return transformedStr;
 };
 
 console.log(transformStr('Example Input'));
 console.log(transformStr('Hello World'));
+console.log(transformStr('T Pain'));
+console.log(transformStr('Fucking Penny Licker'));
