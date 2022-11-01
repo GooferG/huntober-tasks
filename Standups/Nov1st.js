@@ -10,3 +10,17 @@
 // You may assume the input only contain English alphabet and spaces.
 
 // From: https://www.codewars.com/kata/5878520d52628a092f0002d0/
+
+const transformStr = (str) => {
+  const result = str.split('').map((l) => {
+    if (l === l.toUpperCase()) {
+      return l.toLowerCase();
+    } else if (l === l.toLowerCase()) {
+      return l.toUpperCase();
+    }
+  });
+  return result.join('').split(' ').reverse().join(' ');
+};
+
+console.log(transformStr('Example Input'));
+console.log(transformStr('Hello World'));
