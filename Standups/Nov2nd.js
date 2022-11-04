@@ -9,7 +9,10 @@
 // last('take me to semynak'), ['take', 'me', 'semynak', 'to']
 
 function last(x) {
-  return [];
+  const sortedArr = x.split(' ').sort((a, b) => {
+    return a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1);
+  });
+  return sortedArr;
 }
 
 console.log(last('man i need a taxi up to ubud'), [
