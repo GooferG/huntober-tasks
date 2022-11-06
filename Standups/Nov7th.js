@@ -18,3 +18,7 @@
 // Hint: someArr.indexOf(value) === -1 is a value that does not exist in someArr - throw that in a filter!  OR... think about the math...
 
 // From: https://www.codewars.com/kata/595aa94353e43a8746000120
+
+function findDeletedNumber() {
+  return 'result';
+}
