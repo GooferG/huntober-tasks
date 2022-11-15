@@ -11,7 +11,10 @@
 // Hint: figure out the odd numbers and then map to replace in place
 
 // From: https://www.codewars.com/kata/578aa45ee9fd15ff4600090d
+<<<<<<< HEAD
 
 function sortArray() {
   return ['asnwer'];
 }
+=======
+>>>>>>> 4de472d6f5f6cd08d075efece85ac150c4da4618
