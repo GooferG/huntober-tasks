@@ -11,3 +11,7 @@
 // Hint: Find the average off all the letters (don't get hung up on individual words add them all together) then map while repeating the characters the average amounts
 
 // From: https://www.codewars.com/kata/5a430359e1ce0e35540000b1/
+
+function averageLength() {
+  // good luck
+}
