@@ -17,4 +17,8 @@
 
 // From: https://www.codewars.com/kata/523f5d21c841566fde000009
 
-function arrayDiff(arr1, arr2) {}
+function arrayDiff(a, b) {
+  return a.filter((x) => !b.includes(x));
+}
+
+console.log(arrayDiff([1, 2, 2, 2, 3], [2]));
