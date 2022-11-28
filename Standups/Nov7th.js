@@ -19,6 +19,20 @@
 
 // From: https://www.codewars.com/kata/595aa94353e43a8746000120
 
-function findDeletedNumber() {
-  return 'result';
+function findDeletedNumber(arr, mixedArr) {
+  return +arr.filter((x) => mixedArr.indexOf(x) === -1);
 }
+
+console.log(findDeletedNumber([1, 2, 3, 4, 5], [3, 4, 1, 5]), 2, 'Deletion');
+
+console.log(
+  findDeletedNumber([1, 2, 3, 4, 5, 6, 7, 8, 9], [1, 9, 7, 4, 6, 2, 3, 8]),
+  5,
+  'Deletion'
+);
+
+console.log(
+  findDeletedNumber([1, 2, 3, 4, 5, 6, 7, 8, 9], [5, 7, 6, 9, 4, 8, 1, 2, 3]),
+  0,
+  'No deletion'
+);
