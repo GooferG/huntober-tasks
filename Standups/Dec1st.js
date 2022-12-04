@@ -7,5 +7,19 @@
 // From: https://medium.com/siliconwat/algorithms-in-javascript-b0bed68f4038
 
 function fizzBuzz(n) {
-  for (let i = 0; i < n; i++) {}
+  let fizzBuzzArr = [];
+  for (let i = 0; i < n; i++) {
+    if (i % 2 === 0 && i % 3 === 0) {
+      fizzBuzzArr.push('FizzBuzz');
+    } else if (i % 2 === 0) {
+      fizzBuzzArr.push('Fizz');
+    } else if (i % 3 === 0) {
+      fizzBuzzArr.push('Buzz');
+    } else {
+      fizzBuzzArr.push(i);
+    }
+  }
+  return fizzBuzzArr;
 }
+
+console.log(fizzBuzz(16));
